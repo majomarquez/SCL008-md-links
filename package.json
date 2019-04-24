@@ -3,5 +3,30 @@
   "version": "0.1.0",
   "dependencies": {
     "markdown-link-extractor": "^1.2.0"
-  }
+  },
+  "description": "## Preámbulo",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majomarquez/SCL008-md-links.git"
+  },
+  "keywords": [
+    "\"check",
+    "links\"",
+    "\"Markdown\"",
+    "\"Links\""
+  ],
+  "author": "María José Márquez Pérez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majomarquez/SCL008-md-links/issues"
+  },
+  "homepage": "https://github.com/majomarquez/SCL008-md-links#readme"
 }
