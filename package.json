@@ -2,6 +2,7 @@
   "name": "md-links",
   "version": "0.1.0",
   "dependencies": {
+    "is-link-working": "^2.2.0",
     "markdown-link-extractor": "^1.2.0"
   },
   "description": "## Preámbulo",
