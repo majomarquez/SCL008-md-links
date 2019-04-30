@@ -22,6 +22,7 @@ Con la ayuda de Nodejs hemos creado md.Links con esta herramienta podras busar l
 
 
 ## Instalación
+En la terminal : 
 npm i md-links-majomarquez
 
 
@@ -43,3 +44,6 @@ Error catched FIX ME! request to https://nodjs.org/ failed, reason: certificate 
 
 ![img2](https://i.postimg.cc/fLKSvC4Y/Captura-de-pantalla-de-2019-04-30-15-21-50.png)
 
+
+##Organizacion
+https://trello.com/b/6dppZ0qx/markdown-links
