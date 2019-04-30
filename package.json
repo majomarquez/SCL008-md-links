@@ -2,7 +2,7 @@
   "name": "md-links",
   "version": "0.1.0",
   "dependencies": {
-    "fetch": "^1.1.0",
+    "node-fetch": "^1.1.0",
     "filehound": "^1.17.0",
     "is-link-working": "^2.2.0",
     "markdown-link-extractor": "^1.2.0"
