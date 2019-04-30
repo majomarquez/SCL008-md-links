@@ -10,53 +10,49 @@ const path = require('path'); // pasra que me reconozca la ruta absoluta
 
 
 //filehound busca en la carpeta 
-
 const files = FileHound.create()
   .paths('/home/laboratoria/Escritorio/blabla')
   .ext('md')
   .find();
 
+// recorre los .md
 files.then(res=>{
     res.forEach(function (fileAll) {
+        
        
+//markdown imprime toooooodoo los .md
 
-//markdown 
-var markdown = fs.readFileSync(fileAll).toString();  // imprime toooooodoo los .md
-// console.log(markdown);
+fs.readFile(fileAll, (err, data) => {
+  if (err) throw err;
+  processMarkdown(data.toString());
+});  
 
-function checkStatus(res){
-  if (res.ok) {
-    console.log(res.ok)
-      return true;
-  } else {
-    // console.log(res.ok)
-    // console.log(res)
-      return false;
+function processMarkdown(markdown) {
+  //links lee los links dentro de los archivos
+  let links = markdownLinkExtractor(markdown);
+  let validLinks = 0;
+  let invalidLinks = 0;
+
+
+  // lee cada link de readme
+  links.forEach(function (link) { 
+      fetch(link)
+      .then(res => {
+        if (res.ok) {  // console.log(res.ok)
+          validLinks += 1;
+        } else { // console.log(res.ok) // console.log(res)
+          invalidLinks += 1;
+        }
+      })
+      .catch(error => {
+        console.log("Error catched: " + error.message);
+        validLinks -= 1;
+        invalidLinks += 1;
+      });
+  });
       
-  }
- }
-
-//links lee los links dentro de los archivos
-let links = markdownLinkExtractor(markdown);
-let validLinks = 0;
-let invalidLinks = 0;
-
-links.forEach(function (link) { // lee cada link de readme
-    let result;
-    result = fetch(link)
-    .then(checkStatus)
-    .catch(error => console.log("Error catched: " + error.message));
-    if (checkStatus.ok) {
-      validLinks += 1;
-    } else {
-      invalidLinks += 1;
-    }
-});
-    
-links.forEach(function (link) { // lee cada link de readme
-  console.log(link + '  ' +checkStatus(link));
-});
-console.log('From total links ' + links.length + ', valid are ' + validLinks + ' and invalid ' + invalidLinks);
+  console.log('From total links ' + links.length + ', valid are ' + validLinks + ' and invalid ' + invalidLinks);
+}
 
 });
 });
