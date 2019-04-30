@@ -29,7 +29,7 @@ npm i md-links-majomarquez
 ## Usabilidad
 const mdLinks =require('./md-Links');
 
-node index.js <path-to-folder>
+node index.js path-to-folder
 
 ![img1] (https://i.postimg.cc/cHZ8Yjzs/Captura-de-pantalla-de-2019-04-30-15-35-15.png)
 
